@@ -5,7 +5,7 @@ machine:
     # PYTHONPATH: ${PYTHONPATH}:${HOME}/google_appengine
 
     # Replace this with your project ID
-    GCLOUD_PROJECT: "jslpskel"
+    GCLOUD_PROJECT: "maninvan-188317"
     GCLOUD_VERSION: "stable"
     
 
@@ -29,12 +29,12 @@ dependencies:
     # - gcloud auth activate-service-account --key-file ${HOME}/client-secret.json
     - gcloud auth activate-service-account --key-file ${HOME}/gcloud-service-key.json
     # Replace <your-project-id>
-    - gcloud config set project jslpskel
+    - gcloud config set project maninvan-188317
 
 test:
   override:
     # run local unit tests
-    - python test.py
+    - python app_test.py
 
 deployment:
     staging:
