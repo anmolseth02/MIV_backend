@@ -60,4 +60,6 @@ jobs:
               git push heroku master
               heroku run python app_test.py deploy
               heroku restart
+            else
+              echo something is wrong
             fi
