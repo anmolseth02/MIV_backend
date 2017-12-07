@@ -44,10 +44,6 @@ jobs:
             . venv/bin/activate
             python app_test.py test
 
-      - store_artifacts:
-          path: test-reports
-          destination: test-reports
-
       - run: .circleci/setup-heroku.sh
 
       - add_ssh_keys:
