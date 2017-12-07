@@ -8,7 +8,8 @@ class IntegerArithmenticTestCase(unittest.TestCase):
 
 	def test_two(self):
 		tester = app.test_client(self)
-		self.assertEquals(tester.get('/').status_code, 200)
+		response = tester.get('/')
+		self.assertEqual(response.status_code, 200)
 
 
 if __name__ == '__main__':
