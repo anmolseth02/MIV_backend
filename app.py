@@ -18,6 +18,10 @@ app = Flask(__name__)
 app.config.from_object('src.configue')
 db.init_app(app)
 
+@app.route('/')
+def test():
+  return jsonify(0)
+
 @app.route('/checkExist',methods=['POST'])
 def checkExist():
   userName = request.json['userName']
