@@ -38,27 +38,21 @@ jobs:
           key: v1-dependencies-{{ checksum "requirements.txt" }}
 
       # run tests!
-      - run: echo reached here
-
       - run:
           name: run tests
           command: |
             . venv/bin/activate
             python app_test.py test
 
-      - run: echo reached here as well
-
       - store_artifacts:
           path: test-reports
           destination: test-reports
 
-      - run: echo oops
-
-      - run: bash .circleci/setup-heroku.sh
+      - run: .circleci/setup-heroku.sh
 
       - add_ssh_keys:
           fingerprints:
-            - "eY+hMnxxQyD9EvJNPIuv0vYXsekfhltHNuQ6U+qu2qA anmol@dhcp-nyc-1478.redrover.cornell.edu"
+            - "a4:3a:2d:9d:89:96:9a:36:37:32:a3:ae:80:49:db:d9"
       - deploy:
           name: Deploy Master to Heroku
           command: |
@@ -66,6 +60,5 @@ jobs:
               git push heroku master
               heroku run python app_test.py deploy
               heroku restart
-            else
-              echo something is wrong
+           
             fi
