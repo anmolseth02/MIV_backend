@@ -6,10 +6,10 @@ class IntegerArithmenticTestCase(unittest.TestCase):
 		self.assertEquals((1 + 2), 3)
 		self.assertEquals(0 + 1, 1)
 
-	# def test_two(self):
-	# 	tester = app.test_client(self)
-	# 	response = tester.get('/')
-	# 	self.assertEqual(response.status_code, 200)
+	def test_two(self):
+		tester = app.test_client(self)
+		response = tester.get('/')
+		self.assertEqual(response.status_code, 200)
 
 
 if __name__ == '__main__':
