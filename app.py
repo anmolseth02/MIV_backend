@@ -20,7 +20,7 @@ db.init_app(app)
 
 @app.route('/')
 def test():
-  return jsonify(0)
+  return jsonify({'result':'works'})
 
 @app.route('/checkExist',methods=['POST'])
 def checkExist():
